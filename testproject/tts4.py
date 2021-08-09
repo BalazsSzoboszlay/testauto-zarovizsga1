@@ -19,3 +19,5 @@ for n in x:
     resultList.append(childrenlist.__getitem__(n).text)
 
 assert resultList.count("fej") >= 30
+
+driver.quit()
