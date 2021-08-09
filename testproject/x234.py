@@ -7,11 +7,13 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 URL = "https://black-moss-0a0440e03.azurestaticapps.net/x234.html"
 
 
+# függvény a kitöltéshez
 def fill_fields(a, b):
     driver.find_element_by_id("a").send_keys(a)
     driver.find_element_by_id("b").send_keys(b)
 
 
+# függvény a beküldéshez
 def submit():
     driver.find_element_by_id("submit").click()
     time.sleep(2)
@@ -32,5 +34,5 @@ assert submit() == "NaN"
 driver.get(URL)
 assert submit() == "NaN"
 
-#Quit
+# Quit
 driver.quit()

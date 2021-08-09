@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 driver = webdriver.Chrome(ChromeDriverManager().install())
 URL = "https://black-moss-0a0440e03.azurestaticapps.net/ioa8.html"
 
-
+#függvény a számoláshoz
 def calc(operator, a, b):
     if operator == '*':
         return a * b
@@ -15,7 +15,7 @@ def calc(operator, a, b):
     elif operator == '-':
         return a - b
 
-
+#TC01 - számolás ellenérzése
 driver.get(URL)
 num1 = int(driver.find_element_by_id("num1").text)
 num2 = int(driver.find_element_by_id("num2").text)

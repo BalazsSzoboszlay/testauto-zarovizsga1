@@ -6,6 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 driver = webdriver.Chrome(ChromeDriverManager().install())
 URL = " https://black-moss-0a0440e03.azurestaticapps.net/rv4.html"
 
+#TC01 - hiányzó város helyességének ellenőrzése
 driver.get(URL)
 #a "cites" textarea-ben lévő szöveget feldaraboljuk
 citylist = driver.find_element_by_id("cites").text.split(', ', -1)
@@ -31,7 +32,7 @@ driver.find_element_by_id("missingCity").send_keys(result)
 driver.find_element_by_id("submit").click()
 assert driver.find_element_by_id("result").is_displayed() and driver.find_element_by_id("result").text == "Eltaláltad."
 
-
+driver.quit()
 
 
 
